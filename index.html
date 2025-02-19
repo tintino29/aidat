@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dernek Aidat Sorgulama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üye Kayıt Formu</title>
 </head>
 <body>
-    <h1>Dernek Aidat Sorgulama</h1>
-    <form id="aidatForm">
-        <label for="tcNo">TC Kimlik Numarası:</label>
-        <input type="text" id="tcNo" name="tcNo" required>
-        <button type="submit">Sorgula</button>
+    <form id="uyeFormu">
+        <label for="ad">Ad:</label>
+        <input type="text" id="ad" name="ad" required><br>
+        <label for="soyad">Soyad:</label>
+        <input type="text" id="soyad" name="soyad" required><br>
+        <label for="dogumTarihi">Doğum Tarihi:</label>
+        <input type="date" id="dogumTarihi" name="dogumTarihi" required><br>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" id="telefon" name="telefon" required><br>
+        <label for="tcNo">TC No:</label>
+        <input type="text" id="tcNo" name="tcNo" required><br>
+        <button type="submit">Gönder</button>
     </form>
-    <div id="sonuc"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
