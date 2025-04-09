@@ -1,1 +1,0 @@
-Aidatlarınızı sorgulayabilirsiniz.
