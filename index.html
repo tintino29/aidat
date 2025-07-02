@@ -19,5 +19,25 @@
   </div>
   <button id="showVerbBtn" onclick="showVerb()">Past & Future Halleri</button>
   <script src="script.js"></script>
+
+<footer>
+  <h2>📝 Notlarım</h2>
+  <div id="notesContent">Yükleniyor...</div>
+</footer>
+
+<script>
+  fetch('notes.md')
+    .then(response => response.text())
+    .then(text => {
+      // Markdown'u basitçe <pre> içinde göster
+      document.getElementById('notesContent').innerHTML = `<pre>${text}</pre>`;
+    })
+    .catch(error => {
+      document.getElementById('notesContent').innerText = "Notlar yüklenemedi.";
+      console.error("Hata:", error);
+    });
+</script>
+
+  
 </body>
 </html>
