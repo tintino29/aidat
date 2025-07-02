@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiil Pratik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>İngilizce Fiil Pratiği</h1>
+  <div id="verb-container">
+    <p><strong>Fiil (V1):</strong> <span id="verb"></span></p><p><strong>Anlamı</strong> <span id="verbi"></span></p>
+    <input type="text" id="v2" placeholder="V2 yazın">
+    <input type="text" id="v3" placeholder="V3 yazın">
+    <button onclick="checkAnswer()">Kontrol Et</button>
+    <p id="result"></p>
+  </div>
+  <div id="verbo" style="display: none;">
+  </div>
+  <button id="showVerbBtn" onclick="showVerb()">Past & Future Halleri</button>
+  <script src="script.js"></script>
+  <hr>
+  <section id="notes">
+    <h2>📝 Not Defteri</h2>
+    <textarea id="noteInput" placeholder="Notlarını buraya yaz..." rows="8" cols="50"></textarea><br>
+    <button onclick="saveNote()">Kaydet</button>
+    <h3>📌 Son Kaydedilen Not:</h3>
+    <div id="savedNote" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></div>
+  </section>
+
+
+</body>
+</html>
