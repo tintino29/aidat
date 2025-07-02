@@ -131,16 +131,16 @@ function showVerb() {
 window.onload = getRandomVerb;
 
 
-  // Sayfa yüklendiğinde kaydedilmiş notu göster
-  window.onload = function() {
-    document.getElementById("savedNote").innerText = localStorage.getItem("myNote") || "Henüz not yok.";
-  };
+ // Sayfa yüklendiğinde kaydedilmiş notu göster
+window.addEventListener("DOMContentLoaded", function () {
+  const saved = localStorage.getItem("myNote");
+  document.getElementById("savedNote").innerText = saved || "Henüz not yok.";
+});
 
-  // Notu kaydet
-  function saveNote() {
-    const note = document.getElementById("noteInput").value;
-    localStorage.setItem("myNote", note);
-    document.getElementById("savedNote").innerText = note;
-  }
+// Notu kaydet
+function saveNote() {
+  const note = document.getElementById("noteInput").value;
+  localStorage.setItem("myNote", note);
+  document.getElementById("savedNote").innerText = note;
+}
 
- 
