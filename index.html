@@ -28,20 +28,6 @@
   <h3>📌 Son Kaydedilen Not:</h3>
   <div id="savedNote" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></div>
 </section>
-
-<script>
-  // Sayfa yüklendiğinde kaydedilmiş notu göster
-  window.onload = function() {
-    document.getElementById("savedNote").innerText = localStorage.getItem("myNote") || "Henüz not yok.";
-  };
-
-  // Notu kaydet
-  function saveNote() {
-    const note = document.getElementById("noteInput").value;
-    localStorage.setItem("myNote", note);
-    document.getElementById("savedNote").innerText = note;
-  }
-</script>
- 
+  
 </body>
 </html>
