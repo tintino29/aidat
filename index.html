@@ -20,24 +20,28 @@
   <button id="showVerbBtn" onclick="showVerb()">Past & Future Halleri</button>
   <script src="script.js"></script>
 
-<footer>
-  <h2>📝 Notlarım</h2>
-  <div id="notesContent">Yükleniyor...</div>
-</footer>
+ <hr>
+<section id="notes">
+  <h2>📝 Not Defteri</h2>
+  <textarea id="noteInput" placeholder="Notlarını buraya yaz..." rows="8" cols="50"></textarea><br>
+  <button onclick="saveNote()">Kaydet</button>
+  <h3>📌 Son Kaydedilen Not:</h3>
+  <div id="savedNote" style="white-space: pre-wrap; border: 1px solid #ccc; padding: 10px;"></div>
+</section>
 
 <script>
-  fetch('notes.md')
-    .then(response => response.text())
-    .then(text => {
-      // Markdown'u basitçe <pre> içinde göster
-      document.getElementById('notesContent').innerHTML = `<pre>${text}</pre>`;
-    })
-    .catch(error => {
-      document.getElementById('notesContent').innerText = "Notlar yüklenemedi.";
-      console.error("Hata:", error);
-    });
-</script>
+  // Sayfa yüklendiğinde kaydedilmiş notu göster
+  window.onload = function() {
+    document.getElementById("savedNote").innerText = localStorage.getItem("myNote") || "Henüz not yok.";
+  };
 
-  
+  // Notu kaydet
+  function saveNote() {
+    const note = document.getElementById("noteInput").value;
+    localStorage.setItem("myNote", note);
+    document.getElementById("savedNote").innerText = note;
+  }
+</script>
+ 
 </body>
 </html>
